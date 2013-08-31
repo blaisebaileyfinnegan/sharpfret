@@ -1,0 +1,13 @@
+{
+  "name": "sharpfret",
+  "description": "Music Journal",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "mysql": "2.0.0-alpha9",
+    "swig": "~1.0.0-rc1",
+    "passport" : "0.1.17",
+    "passport-local" : "0.1.6"
+  }
+}

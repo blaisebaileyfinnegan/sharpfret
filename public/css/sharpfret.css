@@ -1,0 +1,46 @@
+body {
+}
+
+.inner {
+    padding-top: 15px;
+}
+
+h3.post-title {
+    text-align: left;
+    float: left;
+}
+
+h3.date-created {
+    font-size: 90%:
+    float: right;
+    text-align: right;
+}
+
+div.clearer {
+    clear: both;
+}
+
+p.post-content {
+    text-align: left;
+}
+
+div.contact {
+    text-align: right;
+}
+
+div.header {
+    margin-left: 60px;
+}
+
+div.navigation {
+    margin-top: 15px;
+}
+
+form.form-signin {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+div.admin-index{
+    margin-top: 15px;
+}

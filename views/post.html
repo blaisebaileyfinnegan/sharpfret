@@ -1,0 +1,10 @@
+{% extends 'page.html' %}
+{% block content %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">You are currently viewing a single post.</h3>
+    </div>
+</div>
+{% import 'post-macro.html' as post %}
+{{ post.post(post.id, post.title, post.content, post.created, post.modified) }}
+{% endblock %}

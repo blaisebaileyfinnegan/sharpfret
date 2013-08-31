@@ -1,0 +1,14 @@
+{% macro post(id, title, content, created, modified) %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title post-title">{{ id }} - {{ title }} </h3>
+        <h3 class="panel-title date-created">{{ created }}</h4>
+        <div class="clearer"><!-- --></div>
+    </div>
+    <div class="panel-body">
+        <p="post-content">
+            {{ content }}
+        </p>
+    </div>
+</div>
+{% endmacro %}
