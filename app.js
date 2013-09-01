@@ -65,7 +65,6 @@ passport.deserializeUser(function(id, done) {
 });
 
 function ensureAuthenticated(req, res, next) {
-    console.log(req.user);
     if (req.isAuthenticated()) {
         return next(); 
     } else {
@@ -115,12 +114,16 @@ app.get('/post/:id(\\d+)',
         post);
 
 app.get('/admin', ensureAuthenticated, admin.index);
+app.get('/admin/post', ensureAuthenticated, admin.post.get);
+app.post('/admin/post', ensureAuthenticated, admin.post.post);
+
 app.get('/admin/login', admin.login);
 app.post('/admin/login',
     passport.authenticate('local', { 
         failureRedirect: '/admin/login',
         successRedirect: '/admin'
     }));
+
 
 
 // Port

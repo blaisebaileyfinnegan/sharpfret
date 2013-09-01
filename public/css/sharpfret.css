@@ -1,19 +1,28 @@
 body {
 }
 
-.inner {
-    padding-top: 15px;
+.inner-container {
+    width: 650px;
+    float: left;
+}
+
+.inner-sidebar {
+    width: 300px;
+    float: right;
+}
+
+.wrapper {
+    width: 1000px;
 }
 
 h3.post-title {
     text-align: left;
-    float: left;
+    margin-bottom: 3px;
 }
 
 h3.date-created {
-    font-size: 90%:
-    float: right;
-    text-align: right;
+    font-size: 12px;
+    text-align: left;
 }
 
 div.clearer {
@@ -22,14 +31,7 @@ div.clearer {
 
 p.post-content {
     text-align: left;
-}
-
-div.contact {
-    text-align: right;
-}
-
-div.header {
-    margin-left: 60px;
+    margin-bottom: 0;
 }
 
 div.navigation {
@@ -41,6 +43,65 @@ form.form-signin {
     margin: 0 auto;
 }
 
-div.admin-index{
+form.form-post {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+div.admin {
     margin-top: 15px;
+}
+
+div.admin-footer {
+    padding-top: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+textarea {
+    margin-top: 15px;
+    width: 100%;
+}
+
+div.list-group {
+    text-align: center;
+}
+
+div.buttons {
+    margin-top: 10px;
+}
+
+div.about {
+    color: #fff;
+    float: right;
+    margin-top: 15px;
+}
+img.profile {
+    width: 100%;
+    height: 90%;
+}
+
+div.guidelines {
+    padding: 10px 10px;
+}
+div.guidelines ul {
+    margin: 0;
+}
+
+a.navbar-brand {
+    padding-right: 5px;
+}
+
+div.brand-caption {
+    padding-top: 17px;
+    font-size: 12px;
+}
+
+div.footer {
+    padding-top: 0;
+    text-align: left;
+}
+
+div.footer h6 {
+    margin: 0;
 }
