@@ -23,6 +23,9 @@ var users = require('./cfg/users');
 var UserProvider = require('./lib/usersprovider');
 var userProvider = new UserProvider(users)
 
+var InfoboxProvider = require('./lib/infoboxprovider');
+var infoboxProvider = new InfoboxProvider(connection);
+
 // Passport
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -30,6 +33,7 @@ var LocalStrategy = require('passport-local').Strategy;
 // Register
 express.request.postProvider = express.response.postProvider = postProvider;
 express.request.userProvider = express.response.userProvider = userProvider;
+express.request.infoboxProvider = express.response.infoboxProvider = infoboxProvider;
 
 // TODO: Move into own file
 passport.use(new LocalStrategy(
