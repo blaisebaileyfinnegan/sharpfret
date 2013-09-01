@@ -1,16 +1,5 @@
 <div class="inner-sidebar">
-    <div class="panel panel-default">
-        <img class="profile" alt="My Photo" src="/images/photo.jpg" />
-    </div>
-    <div class="well well-sm">
-        <p>
-            Sharpfret is a challenge in musical improvisation combined with an exercise in the language of writing.
-            I must play guitar over a different backing track each week and write my
-            thoughts about it.
-        </p>
-        <p>
-            My goals are many and vague, so I would hate to try to be verbose about it so early in this blog's lifetime.
-            For now, this is a great way to see how I've matured musically (and in writing capability).
-        </p>
-    </div>
+    {% autoescape false %}
+    {{ infoboxes.sidebar }}
+    {% endautoescape %}
 </div>

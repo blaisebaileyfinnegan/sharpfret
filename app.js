@@ -68,14 +68,6 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next(); 
-    } else {
-        res.redirect('/admin/login');
-    }
-}
-
 
 // Middleware
 app.configure(function() {
@@ -95,31 +87,29 @@ var post = require('./routes/post');
 
 var admin = require('./routes/admin');
 
+var middleware = require('./lib/middleware');
+
 // Routes
 app.get('/', 
-        function (req, res, next) {
-            postProvider.countPosts(function(count) {
-                postProvider.getPosts(count, function(rows) {
-                    req.posts = rows;
-                    next();
-                });
-            });
-        },
+        [middleware.setupInfoboxes, middleware.setupPosts],
         main);
 
 app.get('/post/:id(\\d+)',
-        function (req, res, next) {
-            var id = req.params.id;
-            postProvider.getPostById(id, function(row) {
-                req.post = row;
-                next();
-            });
-        },
+        [middleware.setupInfoboxes, middleware.setupPost],
         post);
 
-app.get('/admin', ensureAuthenticated, admin.index);
-app.get('/admin/post', ensureAuthenticated, admin.post.get);
-app.post('/admin/post', ensureAuthenticated, admin.post.post);
+app.get('/admin',
+        [middleware.ensureAuthenticated, middleware.setupInfoboxes],
+        admin.index);
+
+app.get('/admin/post', middleware.ensureAuthenticated, admin.post.get);
+app.post('/admin/post', middleware.ensureAuthenticated, admin.post.post);
+
+app.get('/admin/infobox/:name', [middleware.ensureAuthenticated, middleware.setupInfobox], admin.editInfobox.get);
+app.post('/admin/infobox/:name', middleware.ensureAuthenticated, admin.editInfobox.post);
+
+app.get('/admin/infobox', middleware.ensureAuthenticated, admin.newInfobox.get);
+app.post('/admin/infobox', middleware.ensureAuthenticated, admin.newInfobox.post);
 
 app.get('/admin/login', admin.login);
 app.post('/admin/login',

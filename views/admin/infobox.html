@@ -1,23 +1,24 @@
 {% extends 'tool.html' %}
 {% block tool %}
+{% autoescape false %}
 <div class="alert alert-success" style="display: none;" id="mb">
     <strong>Success!</strong>
-    <a href="../../">View your post</a>
 </div>
 <div class="container admin">
-    <form action="post" method="post" class="form-post">
+    <form action="" method="post" class="form-post">
         <div class="form-group">
-            <label for="title">Title</label>
-            <input name="title" type="title" class="form-control" id="title">
+            <label for="name">Name</label>
+            <input name="name" type="text" class="form-control" value="{{ infobox.name }}" id="name" {% if disabled %}disabled{% endif%}>
         </div>
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea name="content" class="form-control" id="content" rows="20"></textarea>
+            <textarea name="content" class="form-control" id="content" rows="20">{{ infobox.content }}</textarea>
         <div class="buttons">
             <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
         </div>
     </form>
 </div>
 <script src="/js/form.js"></script>
-<script src="/js/admin-post.js"></script>
+<script src="/js/admin-infobox.js"></script>
+{% endautoescape %}
 {% endblock %}
