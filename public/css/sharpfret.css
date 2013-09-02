@@ -2,6 +2,10 @@ body {
     padding-top: 20px;
 }
 
+.date-created {
+    font-size: 12px;
+}
+
 .container {
     max-width: none !important;
     width: 1000px;
