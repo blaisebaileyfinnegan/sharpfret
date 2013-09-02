@@ -1,1 +1,3 @@
-$(setupForm('/admin/post'));
+$(function() {
+    setupForm('/admin/post');
+});

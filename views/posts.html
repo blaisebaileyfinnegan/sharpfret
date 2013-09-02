@@ -1,7 +1,8 @@
 {% extends 'page.html' %}
 {% block content %}
 {% import 'post-macro.html' as post %}
+{% set show_comments_link = 1 %}
 {% for p in posts %}
-{{ post.post(p.id, p.title, p.content, p.created, p.modified) }}
+{{ post.post(p.id, p.title, p.content, p.created, p.modified, show_comments_link) }}
 {% endfor %}
 {% endblock %}

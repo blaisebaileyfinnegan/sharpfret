@@ -1,4 +1,5 @@
-body {
+html {
+    overflow-y: scroll;
 }
 
 .inner-container {
@@ -104,4 +105,29 @@ div.footer {
 
 div.footer h6 {
     margin: 0;
+}
+
+div.view-comments {
+    margin: 6px 0 0 0;
+    font-size: 12px;
+}
+
+div.post-body {
+    font-size: 120%;
+    padding-bottom: 4px;
+}
+
+div.post-body p {
+    margin-bottom: 14px;
+}
+
+div.post-body ul {
+    margin-top: 8px;
+}
+div.post-body li {
+    margin-bottom: 6px;
+}
+
+div.return-to-context {
+    margin-top: 6px;
 }

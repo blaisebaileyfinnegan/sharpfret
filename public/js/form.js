@@ -1,5 +1,5 @@
 function setupForm(destination) {
-    $('form').submit(function() {
+    $('#submit').click(function() {
         $.post(destination,
             $('form').serialize(),
             function() {

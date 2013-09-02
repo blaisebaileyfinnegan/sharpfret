@@ -1,13 +1,18 @@
-{% macro post(id, title, content, created, modified) %}
+{% macro post(id, title, content, created, modified, show_comments_link) %}
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title post-title">{{ title }} </h3>
         <h3 class="panel-title date-created">{{ created|date('F jS, Y') }}</h3>
     </div>
-    <div class="panel-body">
-        <p class="post-content">
-            {{ content }}
-        </p>
+    <div class="panel-body post-body">
+        {% autoescape false %}
+        {{ content }}
+        {% endautoescape %}
+        {% if show_comments_link %}
+        <div class="view-comments">
+            <a href="/post/{{ id }}?context=1#disqus_thread">View comments</a>
+        </div>
+        {% endif %}
     </div>
 </div>
 {% endmacro %}

@@ -103,7 +103,7 @@ app.get('/admin',
         admin.index);
 
 app.get('/admin/post', middleware.ensureAuthenticated, admin.post.get);
-app.post('/admin/post', middleware.ensureAuthenticated, admin.post.post);
+app.post('/admin/post', [middleware.ensureAuthenticated, middleware.setupInfoboxes], admin.post.post);
 
 app.get('/admin/infobox/:name', [middleware.ensureAuthenticated, middleware.setupInfobox], admin.editInfobox.get);
 app.post('/admin/infobox/:name', middleware.ensureAuthenticated, admin.editInfobox.post);
@@ -117,8 +117,6 @@ app.post('/admin/login',
         failureRedirect: '/admin/login',
         successRedirect: '/admin'
     }));
-
-
 
 // Port
 app.listen(80);

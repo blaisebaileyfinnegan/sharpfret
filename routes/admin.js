@@ -14,9 +14,28 @@ module.exports = {
             var title = req.body.title;
             var content = req.body.content;
 
-            res.postProvider.newPost(title, content, function(id) {
-                res.end();
-            });
+            if ('preview' in req.body) {
+                var date = new Date();
+
+                var post = {
+                    id: 1,
+                    title: title,
+                    content: content,
+                    created: date.toDateString()
+                };
+
+                res.render('post', {
+                    title: 'sharpfret - View Post',
+                    post: post,
+                    infoboxes: req.infoboxes,
+                    context: true
+                });
+                return;
+            } else {
+                res.postProvider.newPost(title, content, function(id) {
+                    res.end();
+                });
+            }
         },
 
         get: function (req, res) {
