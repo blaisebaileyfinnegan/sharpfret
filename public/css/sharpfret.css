@@ -2,6 +2,14 @@ body {
     padding-top: 20px;
 }
 
+li {
+    margin-bottom: 4px;
+}
+
+.date-created {
+    font-size: 12px;
+}
+
 .container {
     max-width: none !important;
     width: 1000px;
@@ -12,7 +20,11 @@ body {
     position: absolute;
     top: 50%;
     width: 100%;
-    margin-top: -20px;
+    margin-top: -34px;
+}
+
+.logo h1 {
+    font-size: 56px;
 }
 
 .panel-top {
