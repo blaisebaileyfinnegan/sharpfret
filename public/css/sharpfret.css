@@ -43,6 +43,7 @@ div.inner-container {
     float: left;
 }
 
+
 div.inner-sidebar {
     width: 300px;
     float: right;
@@ -67,4 +68,8 @@ div.about {
 
 div.clearer {
     clear: both;
+}
+
+.first {
+    margin-top: 0px;
 }
