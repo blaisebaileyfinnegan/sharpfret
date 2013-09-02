@@ -40,7 +40,7 @@ div.navigation {
 }
 
 form.form-signin {
-    max-width: 350px;
+    width: 350px;
     margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ div.admin {
 
 div.admin-footer {
     padding-top: 15px;
-    max-width: 300px;
+    width: 300px;
     margin: 0 auto;
 }
 
