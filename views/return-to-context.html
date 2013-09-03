@@ -1,0 +1,12 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">You are currently viewing a single post.</h3>
+        <div class="return-to-context">
+        {% if context %}
+            <a href="javascript:history.back()" class="alert-link">Return to context</a>
+        {% else %}
+            <a href="/" class="alert-link">View other posts</a>
+        {% endif %}
+        </div>
+    </div>
+</div>

@@ -5,14 +5,14 @@
     <a href="../../">View your post</a>
 </div>
 <div class="container admin">
-    <form action="post" method="post" class="form-post">
+    <form action="" method="post" class="form-post">
         <div class="form-group">
             <label for="title">Title</label>
-            <input name="title" type="title" class="form-control" id="title">
+            <input name="title" type="title" class="form-control" id="title" value="{{ post.title }}">
         </div>
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea name="content" class="form-control" id="content" rows="20"></textarea>
+            <textarea name="content" class="form-control" id="content" rows="20">{{ post.content }}</textarea>
         </div>
         <div class="buttons">
             <button id="submit" class="btn btn-lg btn-primary btn-block" name="submit" value="submit" type="submit">Submit</button>

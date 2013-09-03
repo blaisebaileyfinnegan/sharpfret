@@ -99,11 +99,14 @@ app.get('/post/:id(\\d+)',
         post);
 
 app.get('/admin',
-        [middleware.ensureAuthenticated, middleware.setupInfoboxes],
+        [middleware.ensureAuthenticated, middleware.setupInfoboxes, middleware.setupPosts],
         admin.index);
 
 app.get('/admin/post', middleware.ensureAuthenticated, admin.post.get);
 app.post('/admin/post', [middleware.ensureAuthenticated, middleware.setupInfoboxes], admin.post.post);
+
+app.get('/admin/post/:id(\\d+)', [middleware.ensureAuthenticated, middleware.setupPost], admin.editPost.get);
+app.post('/admin/post/:id(\\d+)', [middleware.ensureAuthenticated, middleware.setupInfoboxes], admin.editPost.post);
 
 app.get('/admin/infobox/:name', [middleware.ensureAuthenticated, middleware.setupInfobox], admin.editInfobox.get);
 app.post('/admin/infobox/:name', middleware.ensureAuthenticated, admin.editInfobox.post);

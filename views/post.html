@@ -1,17 +1,9 @@
 {% extends 'page.html' %}
 {% block content %}
-<div class="panel panel-info">
-    <div class="panel-heading">
-        <h3 class="panel-title">You are currently viewing a single post.</h3>
-        {% if context %}
-        <div class="return-to-context">
-            <a href="javascript:history.back()" class="alert-link">Return to context</a>
-        </div>
-        {% endif %}
-    </div>
-</div>
+{% include 'return-to-context.html' %}
 {% import 'post-macro.html' as post %}
 {{ post.post(post.id, post.title, post.content, post.created, post.modified) }}
+{% include 'return-to-context.html' %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

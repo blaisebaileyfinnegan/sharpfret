@@ -2,13 +2,20 @@
 {% block content %}
 <div class="container admin">
     <div class="list-group">
+        <h4>Creation</h4>
         <a href="/admin/post" class="list-group-item">New Post</a>
         <a href="/admin/infobox" class="list-group-item">New Infobox</a>
-        <a href="/admin/post/index" class="list-group-item">Modify Posts</a>
     </div>
     <div class="list-group">
+        <h4>Boxes</h4>
     {% for name, content in infoboxes %}
         <a href="/admin/infobox/{{ name }}" class="list-group-item">{{ name }}</a>
+    {% endfor %}
+    </div>
+    <div class="list-group">
+        <h4>Posts</h4>
+    {% for post in posts %}
+        <a href="/admin/post/{{ post.id }}" class="list-group-item">{{ post.title }} - {{ post.created|date('F jS, Y') }}</a>
     {% endfor %}
     </div>
 </div>
