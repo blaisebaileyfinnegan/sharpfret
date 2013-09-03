@@ -23,6 +23,11 @@ li {
     margin-top: -34px;
 }
 
+.logo a:hover {
+    text-decoration: none;
+    color: #000; 
+}
+
 .logo h1 {
     font-size: 56px;
 }
@@ -76,3 +81,4 @@ div.about {
 div.clearer {
     clear: both;
 }
+
