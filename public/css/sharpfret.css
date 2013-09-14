@@ -94,3 +94,18 @@ div.clearer {
 .post-pic {
     margin-left: 8px;
 }
+
+div.post {
+    border: none;
+}
+
+div.post-heading {
+    background-image: none !important;
+    background-repeat: none;
+    background-color: #fff !important;
+    padding-left: 0;
+}
+
+.post-title {
+    font-size: 48px;
+}
