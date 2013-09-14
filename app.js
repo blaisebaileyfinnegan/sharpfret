@@ -6,6 +6,10 @@ var app = express();
 // Templating engine
 var swig = require('swig');
 
+// Custom filters
+var filters = require('./lib/filters');
+filters(swig);
+
 app.engine('html', swig.renderFile);
 
 app.set('view engine', 'html');

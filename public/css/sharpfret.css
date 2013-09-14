@@ -90,3 +90,18 @@ div.clearer {
 .multi-level {
     margin-top: 4px;
 }
+
+div.post {
+    border: none;
+}
+
+div.post-heading {
+    background-image: none !important;
+    background-repeat: none;
+    background-color: #fff !important;
+    padding-left: 0;
+}
+
+.post-title {
+    font-size: 48px;
+}
