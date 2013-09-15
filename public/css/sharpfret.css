@@ -21,6 +21,8 @@ li {
     top: 50%;
     width: 100%;
     margin-top: -34px;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
 }
 
 .logo a:hover {
@@ -117,3 +119,20 @@ div.post-heading {
     font-size: 48px;
 }
 
+.logo-border {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+}
+
+div.panel-guidelines {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+}
+
+div.panel-guidelines ul {
+    list-style-type: none;
+}
