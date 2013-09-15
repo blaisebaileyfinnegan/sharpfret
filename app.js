@@ -32,45 +32,16 @@ var infoboxProvider = new InfoboxProvider(connection);
 
 // Passport
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+var auth = require('./lib/sharpfret-passport');
+
+// Set up our authentication strategy with our DB of users
+auth(passport, userProvider);
+
 
 // Register
 express.request.postProvider = express.response.postProvider = postProvider;
 express.request.userProvider = express.response.userProvider = userProvider;
 express.request.infoboxProvider = express.response.infoboxProvider = infoboxProvider;
-
-// TODO: Move into own file
-passport.use(new LocalStrategy(
-    function(username, password, done) {
-        process.nextTick(function () {
-            userProvider.findUserByName(username, function(err, user) {
-                if (err) {
-                    return done(err);
-                }
-
-                if (!user) {
-                    return done(null, false, { message: 'Unknown user ' + username });
-                }
-
-                if (user.password != password) {
-                    return done(null, false, { message: 'Invalid password' });
-                }
-
-                return done(null, user);
-            });
-        });
-    }
-));
-
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-    userProvider.findUserById(id, function(err, user) {
-        done(err, user);
-    });
-});
 
 
 // Middleware
